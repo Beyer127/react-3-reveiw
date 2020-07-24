@@ -28,23 +28,54 @@ class Home extends Component {
         }
     }
 
-    // handleChange(value){
-    //     this.setState({from: value})
-    //     this.setState({jobTitle: value})
-    //     this.setState({Employee: value})
-    // }
+
+
 
 
     render(){
         console.log(this.state)
         return(
             <div>
-                 {/* <h2 onChange={e => this.handleChange(e.target.value)}></h2>
-                  <p>{this.state.from}</p> */}
-                  <h2>{this.state.data[this.state.index].city}</h2>
+
+                <div className="header">
+                    <h4>Home</h4>
+                </div>
+
+                <div className="home">
+                    <h2>{this.state.data[this.state.index].name.first} {this.state.data[this.state.index].name.last}</h2>
+                </div>
+
+                     <section>
+                         <div className="main"></div>
+               
+                     <div>
+                         <strong>From:</strong> {this.state.data[this.state.index].city}
+                    </div>
+
+                    <div>
+                       <strong>Job Title:</strong> {this.state.data[this.state.index].title}
+                    </div>
+
+                    <div>
+                        <strong>Employer:</strong> {this.state.data[this.state.index].employer}
+                    </div>
+
+                    <ol>
+                          <h2>Favorite Movies:</h2>
+                          <li>{this.state.data[this.state.index].favoriteMovies[0]}</li>
+                          <li>{this.state.data[this.state.index].favoriteMovies[1]}</li>
+                          <li>{this.state.data[this.state.index].favoriteMovies[2]}</li>
+                      </ol>
+
+                      </section>
+
+
                   <button className="next" onClick={() => this.next()}>Next</button>
                   <button className="previous" onClick={() => this.previous()}>Previous</button>
+               
             </div>
+
+          
         )
     }
 }
