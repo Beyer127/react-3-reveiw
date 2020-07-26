@@ -7,7 +7,8 @@ class Home extends Component {
 
         this.state = {
             data: data,
-            index: 0
+            index: 0,
+            numCards: data.length
         }
 
 }
@@ -41,37 +42,51 @@ class Home extends Component {
                     <h4>Home</h4>
                 </div>
 
-                <div className="home">
-                    <h2>{this.state.data[this.state.index].name.first} {this.state.data[this.state.index].name.last}</h2>
-                </div>
-
                      <section>
-                         <div className="main"></div>
+                         <div className="main">
+
+                             <div id="card-numbers">
+                                 <h2>{this.state.index}/{this.state.numCards}</h2>
+                             </div>
+
+                            <div className="name">
+                                <h2>{this.state.data[this.state.index].name.first} {this.state.data[this.state.index].name.last}</h2>
+                            </div>
                
-                     <div>
-                         <strong>From:</strong> {this.state.data[this.state.index].city}
-                    </div>
+                            <div className="state">
+                                <strong>From:</strong> {this.state.data[this.state.index].city}
+                            </div>
 
-                    <div>
-                       <strong>Job Title:</strong> {this.state.data[this.state.index].title}
-                    </div>
+                            <div className="job-title">
+                            <strong>Job Title:</strong> {this.state.data[this.state.index].title}
+                            </div>
 
-                    <div>
-                        <strong>Employer:</strong> {this.state.data[this.state.index].employer}
-                    </div>
+                            <div className="employer">
+                                <strong>Employer:</strong> {this.state.data[this.state.index].employer}
+                            </div>
 
-                    <ol>
-                          <h2>Favorite Movies:</h2>
-                          <li>{this.state.data[this.state.index].favoriteMovies[0]}</li>
-                          <li>{this.state.data[this.state.index].favoriteMovies[1]}</li>
-                          <li>{this.state.data[this.state.index].favoriteMovies[2]}</li>
-                      </ol>
+                            <ol className="fav-movies">
+                                <h2>Favorite Movies:</h2>
+                                <li className="movie-list">{this.state.data[this.state.index].favoriteMovies[0]}</li>
+                                <li className="movie-list">{this.state.data[this.state.index].favoriteMovies[1]}</li>
+                                <li className="movie-list">{this.state.data[this.state.index].favoriteMovies[2]}</li>
+                            </ol>
+
+                        </div>
 
                       </section>
 
+                        <div id="buttons">
+                            <button className="button-nav" onClick={() => this.next()}>{'< Previous'}</button>
+                            <div id="edit-buttons">
+                                <button className="edit-buttons">Edit</button>
+                                <button className="edit-buttons">Delete</button>
+                                <button className="edit-buttons">New</button>
+                            </div>
+                            <button className="button-nav" onClick={() => this.previous()}>{'Next >'}</button>
+                        </div>
+    
 
-                  <button className="next" onClick={() => this.next()}>Next</button>
-                  <button className="previous" onClick={() => this.previous()}>Previous</button>
                
             </div>
 
