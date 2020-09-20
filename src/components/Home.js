@@ -77,13 +77,13 @@ class Home extends Component {
                       </section>
 
                         <div id="buttons">
-                            <button className="button-nav" onClick={() => this.next()}>{'< Previous'}</button>
+                            <button className="button-nav" onClick={() => this.previous()}>{'< Previous'}</button>
                             <div id="edit-buttons">
                                 <button className="edit-buttons">Edit</button>
                                 <button className="edit-buttons">Delete</button>
                                 <button className="edit-buttons">New</button>
                             </div>
-                            <button className="button-nav" onClick={() => this.previous()}>{'Next >'}</button>
+                            <button className="button-nav" onClick={() => this.next()}>{'Next >'}</button>
                         </div>
     
 
